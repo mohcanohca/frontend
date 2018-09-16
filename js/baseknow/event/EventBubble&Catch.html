@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件冒泡和事件捕获</title>
+    <style>
+        #outer{
+            width: 400px;
+            height: 300px;
+            border: 1px solid;
+            background-color: antiquewhite;
+        }
+        #inner{
+            position: relative;
+            width:100px;
+            height:100px;
+            left: 150px;
+            top:100px;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+<div id="outer">
+    <div id="inner">
+    </div>
+</div>
+
+<div id="test">
+    testteset
+</div>
+<script>
+    var outer=document.getElementById('outer');
+    var inner=document.getElementById('inner');
+    /*addEventListener有三个参数：
+
+    element.addEventListener(event, function, useCapture)
+
+    第一个参数是需要绑定的事件
+    第二个参数是触发事件后要执行的函数
+    第三个参数默认值是false，表示在事件冒泡阶段调用事件处理函数;如果参数为true，则表示在事件捕获阶段调用处理函数。
+  */
+    /*
+     对于非target节点则先执行捕获再执行冒泡
+
+     对于target节点则是先执行先注册的事件，无论冒泡还是捕获
+     */
+/*   outer.addEventListener('click',function () {
+        alert('outer在捕获阶段触发');
+    },true);
+    inner.addEventListener('click',function () {
+        alert('inner在冒泡阶段触发');
+    },false);
+    inner.addEventListener('click',function () {
+        alert('inner在捕获阶段触发');
+    },true);
+    outer.addEventListener('click',function () {
+        alert('outer在冒泡阶段触发');
+    },false);*/
+
+    //先外后内：都在捕获阶段触发
+    outer.addEventListener('click',function (e) {
+        alert(this.id);
+    },true);
+    inner.addEventListener('click',function (e) {
+        alert(this.id);
+    },true);
+
+    //先外不内：在外部使用stopPropogation阻止事件的传播
+    outer.addEventListener('click',function (e) {
+        alert(this.id);
+        e.stopPropagation();
+    },true);
+    inner.addEventListener('click',function (e) {
+        alert(this.id);
+    },true);
+
+    //先内后外：事件冒泡
+    outer.addEventListener('click',function (e) {
+        alert(this.id);
+    },false);
+    inner.addEventListener('click',function (e) {
+        alert(this.id);
+    },false);
+
+    //先内不外：在内部阻止事件冒泡stopPropagation()
+    outer.addEventListener('click',function (e) {
+        alert(this.id);
+    },false);
+    inner.addEventListener('click',function (e) {
+        alert(this.id);
+//        e.stopPropagation()
+        e.stopImmediatePropagation();//DOM3级别
+    },false);
+
+</script>
+
+<script src="./defineEvent.js"></script>
+</body>
+</html>

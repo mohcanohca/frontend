@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用CSS3 animation控制GIF图</title>
+    <style>
+        .love{
+            display: block;
+            width:100px;
+            height:100px;
+            background: url("image/web_heart_animation.png") 0 0 no-repeat;
+            -webkit-background-size:2900%;
+            background-size:2900%;
+            animation: hear-burst steps(28) 28s infinite both;
+        }
+        .stop{
+            -webkit-animation-play-state: paused;
+            -moz-animation-play-state: paused;
+            -o-animation-play-state: paused;
+            animation-play-state: paused;
+        }
+        @keyframes hear-burst {
+            0%{
+                background-position: 0%;
+            }
+            100%{
+                background-position: 100%;
+            }
+        }
+    </style>
+
+
+</head>
+<body>
+<i id="testImg" class="love"></i>
+<p><input type="button" id="testBtn" value="暂停"></p>
+
+<script>
+    var image=document.getElementById('testImg'),
+        button=document.getElementById('testBtn');
+
+    if(image.classList&&image&&button){
+        button.onclick=function () {
+            if (this.value=='暂停'){
+                image.classList.add('stop');
+                this.value='播放';
+            }else{
+                image.classList.remove('stop');
+                this.value='暂停';
+            }
+        }
+    }
+
+</script>
+</body>
+</html>

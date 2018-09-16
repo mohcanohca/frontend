@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+
+        #container {
+            width: 100%;
+        }
+
+        #header {
+            height: 30px;
+            line-height: 30px;
+            padding: 5px;
+            border: 1px solid #aaa;
+            background: #cccccc;
+        }
+
+        #header a {
+            font-weight: bold;
+            color: #000;
+        }
+
+        #list-song {
+            padding: 0px 2px;
+        }
+
+        #list-song .item{
+            padding: 3px 5px;
+            font-size: 16px;
+        }
+        #list-song .item .index {
+            width: 30px;
+            color: #ffa0be;
+            text-align: left;
+        }
+
+        #list-song .item .play_btn {
+            display: inline-block;
+            width:20px;
+            height: 20px;
+            margin: 5px;
+            font-size:10px ;
+            line-height: 20px;
+            text-align: center;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+            background-color: #cccccc;
+        }
+        .item .song_name,.item .song_singer{
+            display: inline-block;
+            width: 140px;
+            color: cornflowerblue;
+        }
+
+        #footer{
+            color: cornflowerblue;
+        }
+        #footer .more{
+            display: inline-block;
+            width: 160px;
+            margin-left: 5px;
+            color: #F6E236;
+        }
+        #footer .play{
+            display: inline-block;
+            padding: 2px;
+            border: 1px solid #cccccc;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+        }
+
+
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="header">
+        <a href="">歌曲TOP500</a>
+    </div>
+    <div id="list-song">
+        <ul>
+            <li class="item"><span class="index">1</span><span class="play_btn">▶</span><a href="" class="song_name">江南style</a><a
+                    href="" class="song_singer">psy</a></li>
+            <li class="item"><span class="index">2</span><span class="play_btn">▶</span><a href="" class="song_name">北京北京</a><a
+                    href="" class="song_singer">汪峰</a></li>
+            <li class="item"><span class="index">3</span><span class="play_btn">▶</span><a href="" class="song_name">我的歌声里</a><a
+                    href="" class="song_singer">曲婉婷</a></li>
+        </ul>
+
+    </div>
+    <div id="footer"><span class="more"><a href="">更多>></a></span><span class="play"><a href="" class="btn">试听全部</a></span>
+    </div>
+</div>
+</body>
+</html>

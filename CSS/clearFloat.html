@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>清除浮动的三种方式</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .left, .right {
+            float: left;
+        }
+
+        .left {
+            width: 200px;
+            background-color: antiquewhite;
+        }
+
+        .right {
+            width: 300px;
+            background-color: aquamarine;
+        }
+
+        .clearfix:after {
+            display:block;
+            content: '';
+            visibility:hidden;
+            clear:both;
+        }
+
+        .clearfix {
+            *zoom: 1;
+        }
+
+        .overflow{
+            overflow: hidden;
+        }
+
+        .blank+div{
+            clear:both;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="clearfix">
+    <div class="left">left</div>
+    <!--<div class="clearFloat"></div>-->
+    <div class="right">right</div>
+</div>
+
+<div class="overflow">
+    <div class="left">left</div>
+    <!--<div class="clearFloat"></div>-->
+    <div class="right">right</div>
+</div>
+
+<div class="blank">
+    <div class="left"><div>left</div><span>left</span><div>left</div></div>
+    <!--<div class="clearFloat"></div>-->
+    <div class="right">right</div>
+</div>
+<div></div>
+
+<div class="test">
+    <h1>testtest!!!</h1>
+</div>
+
+</body>
+</html>

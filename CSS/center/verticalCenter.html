@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>垂直居中</title>
+    <style>
+        .parent{
+            width: 300px;
+            position: relative;
+            background-color: #aaaaaa;
+        }
+        .child{
+            background-color: antiquewhite;
+            position: absolute;
+            top:50%;
+            transform: translateY(-50%);
+        }
+
+        .hasHeight{
+            height: 300px;
+            background-color: #aaaaaa;
+        }
+        .onlychild{
+            position: relative;
+            top:50%;
+            transform: translateY(-50%);
+        }
+        .flex{
+            display: flex;
+            height:300px;
+            background-color: pink;
+            align-items:center;
+        }
+    </style>
+</head>
+<body>
+<div class="parent">
+    <img src="../../image/dajun.jpg" alt="">
+    <div class="child">hehehda</div>
+</div>
+
+<div class="hasHeight">
+    <div class="onlychild">独生子</div>
+</div>
+
+<div class="flex">
+    <p>flex布局下的居中</p>
+</div>
+</body>
+</html>

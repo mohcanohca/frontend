@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>纯CSS实现模态框</title>
+    <style>
+
+        input[type='checkbox']{
+            display: none;
+        }
+        .modal{
+            display: none;
+            position: fixed;
+            top:0;
+            bottom:0;
+            left:0;
+            right:0;
+            background: rgba(0,0,0,.3);
+        }
+        label{
+            line-height:20px;
+            padding:2px 5px;
+            background: #aaa;
+            font-size:14px;
+            color: #fff;
+            box-shadow: 0 0 2px #888888;
+        }
+        label:active{
+            box-shadow: none;
+        }
+        #checkbox:checked~.modal{
+            display: flex;
+        }
+        .close{
+            margin:auto;
+        }
+    </style>
+</head>
+<body>
+<label for="checkbox">展示</label>
+<input id="checkbox" type="checkbox">
+<div class="modal">
+    <label class="close" for="checkbox">关闭</label>
+</div>
+</body>
+</html>

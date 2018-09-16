@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>利用storage事件监听web storage中的数据</title>
+</head>
+<body>
+<div id="localoutput"></div>
+<div id="sesseionoutput"></div>
+<script>
+    window.addEventListener('storage',function (event) {
+        alert("listened")
+        if(event.key=='test'){
+            var output=document.getElementById('localoutput');
+            output.innerHTML="原有值："+event.oldValue;
+            output.innerHTML+="<br/>现有值："+event.newValue;
+            output.innerHTML+="<br/>变动页面地址："+decodeURI(event.url);
+            console.log(event.storageArea);
+        }
+        if(event.key=='session'){
+            var output=document.getElementById('sesseionoutput');
+            output.innerHTML="原有值："+event.oldValue;
+            output.innerHTML+="<br/>现有值："+event.newValue;
+            output.innerHTML+="<br/>变动页面地址："+event.url;
+            console.log(event.storageArea);
+        }
+    },false);
+
+</script>
+</body>
+</html>

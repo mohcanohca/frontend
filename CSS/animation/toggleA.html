@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS实现标签页的动态切换效果</title>
+    <style>
+        :target{
+            border:1px solid;
+            /*background-color: pink;*/
+        }
+        #news1:target{
+            background-color: yellow;
+        }
+        #news2:target{
+            background-color: pink;
+        }
+
+        .box{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            background: rgba(100,100,100,.3);
+        }
+        .show{
+            animation: showbox 2s infinite;
+        }
+
+        @keyframes showbox{
+            from{
+                background: rgba(100,100,100,.3);
+            }
+            to{
+                background: rgba(100,100,100,.8);
+            }
+        }
+
+    </style>
+</head>
+<body>
+<p><a href="#news1">跳转至内容一</a></p>
+<p><a href="#news2">跳转至内容二</a></p>
+<br>
+<br>
+<p>下面是news</p>
+
+<div id="news1">内容一</div>
+<div id="news2">内容er</div>
+
+<button onclick="show()">show</button>
+
+
+<script>
+    function show() {
+        alert('show');
+        var box=document.getElementsByClassName('box')[0];
+        box.className='box show';
+    }
+</script>
+</body>
+</html>

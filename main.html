@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js调试页面</title>
+</head>
+<body>
+
+<div id="test" class="a b c d" style="width: 100px;height: 100px; background: #F6E236">
+
+</div>
+<button onclick="add()">add</button>
+<button onclick="remove()">remove</button>
+
+<!--<script src="js/sort/fullSort.js"></script>-->
+<!--<script src="js/binaryTree/createTree.js"></script>-->
+
+<!--<script src="js/baseknow/implements.js"></script>-->
+<!--<script src="js/toutiao/regExp.js"></script>-->
+<!--<script src="js/baseknow/regExp.js"></script>-->
+<!--<script src="js/baseknow/newObject.js"></script>-->
+<!--<script src="js/tencent/2.js"></script>-->
+
+<!--<script src="js/baseknow/memoryLeak.js"></script>-->
+<!--<script src="js/baseknow/flatten.js"></script>-->
+<!--<script src="js/baseknow/reduce.js"></script>-->
+<!--<script src="js/baseknow/map.js"></script>-->
+<!--<script src="js/baseknow/regExp.js"></script>-->
+<!--<script src="js/jingdong/1.js"></script>-->
+<!--<script src="js/jingdong/2.js"></script>-->
+<!--<script src="js/libs/require.js"></script>
+<script src="js/es6/babel-core.js"></script>-->
+<!--<script src="js/souhu/2.js"></script>-->
+<!--<script src="js/tecentsucc/5.js"></script>-->
+<!--<script src="js/tecentsucc/c.js"></script>-->
+<!--<script src="js/baseknow/closebag.js"></script>-->
+<!--<script src="js/360/3.js"></script>-->
+<!--<script src="js/baseknow/property.js"></script>-->
+<script src="js/baseknow/handleClass.js"></script>
+<script>
+    var test=document.getElementById('test');
+    var cHandler=new classHandler();
+    function add() {
+        var arr=['e','f','g']
+        addClassH5(test,arr);
+        cHandler.addClass(test,'h');
+    }
+
+    function remove() {
+        var arr=['b','c','d']
+        cHandler.removeClass(test,'a');
+        removeClassH5(test,arr);
+    }
+
+    var a={x:100};
+    var b=a;
+    a.y=a={n:2};
+
+</script>
+
+<!--<script>
+//    var reg=/^[http|https]:\/\/([\w]+(\.[\w]+)*)(\/[^#?]+)*(#[^?]+){0,1}(\?[.]+)*/g;
+    var reg=/^(http|https):\/\/([^/]+)(\/[^#?]+)*(#[^?]+){0,1}(\?.+)*/;
+    var url='http://10.109.252.80/hongyup/#/supplier-element/hotel?id=1&nn=3';
+    console.log(url.match(reg));
+</script>-->
+
+</body>
+</html>

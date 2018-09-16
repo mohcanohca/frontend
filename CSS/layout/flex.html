@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flex布局</title>
+    <style>
+        .box{
+            background-color: antiquewhite;
+            display: flex;
+            justify-content:space-around;
+            align-items: center;
+        }
+        .c1{
+            flex:2;
+            font-size: 40px;
+            background-color: brown;
+        }
+        .c2{
+            flex:1;
+            background-color: #00ff00;
+        }
+        .c3{
+            flex-basis:50%;;
+            background-color: aqua;
+            align-self:flex-end;
+        }
+        h1:hover:before{
+            content: attr(data-hover-reponse);
+            color: #000;
+            position: relative;
+            left:0;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <hgroup>
+        <h1 data-hover-reponse="Don't touch me"> Recall Fan Page </h1>
+        <h2> Only for people who want the memory of a lifetime. </h2>
+    </hgroup>
+</header>
+<input type=”text” name=”someInput” required>
+
+
+<div class="box">
+    <div class="c1">zuobian</div>
+    <div class="c2">media</div>
+    <div class="c3">youbian</div>
+</div>
+</body>
+</html>

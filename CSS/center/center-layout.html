@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>水平垂直居中</title>
+    <style>
+
+        .parent {
+            background-color: pink;
+            border:1px solid;
+            /*height: 200px;*/
+        }
+
+        .child {
+            background-color: white;
+            font-size: 16px;
+        }
+
+        /*要居中元素宽高固定*/
+        .fixed-size {
+            position: relative;
+        }
+
+        .fixed-size .center {
+            position: absolute;
+            width: 300px;
+            height: 100px;
+            padding: 20px;
+            top: 50%;
+            left: 50%;
+            /*margin: -width/2+padding 0 0 -height/2+padding*/
+            margin: -70px 0 0 -170px;
+        }
+
+        /*要居中元素宽高不固定*/
+        .unfixed-size {
+            position: relative;
+            /*应对transform的计算结果含有小数时，会使元素看起来模糊，需要父容器设置该属性*/
+            -webkit-transform-style: preserve-3d;
+            -moz-transform-style: preserve-3d;
+            -ms-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+        }
+
+        .unfixed-size .center {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+
+        /*flexbox*/
+        .flex{
+            display: flex;
+            justify-content:center;
+            align-items:center;
+        }
+
+        .wrapper{
+            background-color: grey;
+            width: 100%;
+            height: 300px;
+            position: relative;
+
+        }
+        .content{
+            width: 300px;
+            height: 100px;
+            position: absolute;
+            top:0;
+            bottom:0;
+            left:0;
+            right:0;
+            background-color: wheat;
+        }
+    </style>
+</head>
+<body>
+
+<!--子元素宽高固定，需要父容器有高度，否则元素无法显示-->
+<div class="parent fixed-size">
+    <div class="child center">
+        要居中的模块啊
+    </div>
+</div>
+
+
+<!--子元素宽高不固定-->
+<div class="parent unfixed-size">
+    <div class="child center">要居中的模块啊</div>
+</div>
+
+<!--flexbox-->
+<!--<div class="parent flex">
+    <div class="child center">要居中的模块啊</div>
+</div>-->
+<div class="wrapper">
+    <div class="content">
+        content
+    </div>
+</div>
+</body>
+</html>

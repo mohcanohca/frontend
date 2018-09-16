@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>transform&&translate</title>
+
+    <style>
+        /*
+        transition：定义css属性的变化过程
+        transform：定义css样式的变化结果
+        ::before与::after被添加元素的子元素
+        translate的%相对于自身而言
+        top、left、right、bottom是相对父元素而言
+        */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            position: relative;
+            width: 360px;
+            height: 480px;
+            overflow: hidden;
+        }
+
+        .container img {
+            width: 100%;
+        }
+
+        .container:hover img {
+            opacity: .5;
+        }
+
+        .container::before,
+        .container::after {
+            transition: transform 1s linear;
+        }
+
+        .container::before {
+            content: 'before';
+            width: 100%;
+            height: 50%;
+            display: block;
+            position: absolute;
+            top: 0;
+            z-index: 1;
+            transform: translateY(-100%) scale(.7);
+            /*margin-top: -100%;*/
+            background: rgba(100, 200, 10, .5);
+        }
+
+        .container::after {
+            content: 'after';
+            width: 100%;
+            height: 50%;
+            display: block;
+            position: absolute;
+            top: 50%;
+            z-index: 1;
+            /*margin-top: 100%;*/
+            transform: translateY(100%) scale(.7);
+            background: rgba(100, 10, 100, .5);
+        }
+
+        .container:hover::before,
+        .container:hover::after {
+            transform: translateY(0%) scale(1);
+        }
+
+        .trans:hover{
+            background-color: #ffa0be;
+            color: #fff;
+            animation: myanimate 2s infinite;
+        }
+        @keyframes myanimate {
+            from{
+                /*width: 20px;*/
+            }
+            to{
+                width: 100px;
+            }
+        }
+
+        .trans{
+            display: inline-block;
+            /*transition:background-color 1s ease-in-out;*/
+            transition:all 1s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <img src="../../image/dajun.jpg" alt="">
+</div>
+
+<a href="/" class="trans">经过我~~</a>
+</body>
+</html>

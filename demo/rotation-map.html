@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图实践</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        html,body{
+            width: 100%;
+            height:100%;
+        }
+        a{
+            text-decoration:none;
+        }
+        .container{
+            width: 600px;
+            height: 400px;
+            position: relative;
+            overflow: hidden;
+        }
+        .list{
+            width: 4200px;
+            height: 400px;
+            position: absolute;
+            z-index: -1;
+        }
+        .list img{
+            width: 600px;
+            height: 400px;
+            float: left;
+        }
+        .arrow{
+            width:40px;
+            height:40px;
+            position: absolute;
+            z-index: 2;
+            display: none;
+            top:50%;
+            margin-top:-20px;
+
+            color: #fff;
+            font-size: 36px;
+            /*line-height: 100%;!*百分比是相对于字体的大小设置*!*/
+            line-height: 40px;
+            text-align: center;
+
+            cursor:pointer;
+            background-color: rgba(0,0,0,.3);
+        }
+        .arrow:hover{
+            background-color: rgba(0,0,0,.7);
+        }
+        .container:hover .arrow{
+            display: block;
+        }
+        #prev{
+            left:20px;
+        }
+        #next{
+            right:20px;
+        }
+
+        #points{
+            width:110px;
+            height: 20px;
+            padding: 5px 0;
+            position: absolute;
+            bottom: 20px;
+            left:50%;
+            margin-left: -55px;
+            z-index: 1;
+            font-size: 0;/*去除inline-block元素之间的空白间距*/
+        }
+        #points .point{
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin-left: 10px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,.3);
+        }
+        #points .point:hover{
+            background-color: rgba(255,255,255,.7);
+            cursor: pointer;
+        }
+        #points .on{
+            background-color: #ffa0be;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="list">
+        <img src="../image/5.jpg" alt="">
+        <img src="../image/1.jpg" alt="">
+        <img src="../image/2.jpg" alt="">
+        <img src="../image/3.jpg" alt="">
+        <img src="../image/4.jpg" alt="">
+        <img src="../image/5.jpg" alt="">
+        <img src="../image/1.jpg" alt="">
+    </div>
+
+    <ul id="points">
+        <li class="point" index="1"></li>
+        <li class="point" index="2"></li>
+        <li class="point" index="3"></li>
+        <li class="point" index="4"></li>
+        <li class="point" index="5"></li>
+    </ul>
+
+    <a href="javascript:;" class="arrow" id="prev">&lt;</a>
+    <a href="javascript:;" class="arrow" id="next">&gt;</a>
+
+</div>
+
+<script>
+    window.onload=function () {
+        var container=document.getElementsByClassName('container')[0];
+        var list=document.getElementsByClassName('list')[0];
+        var prev=document.getElementById('prev');
+        var next=document.getElementById('next');
+        var points=document.getElementById('points').getElementsByTagName('li');
+        var index=1;//标识进入第几张图片
+        var timer=setInterval(function () {
+            move(list,-600);
+            pointsShow();
+        },2000);
+        container.addEventListener('mouseover',stop);
+        container.addEventListener('mouseout',start);
+
+        (function () {
+           for(var i=0;i<points.length;i++){
+               var curPoint=points[i];
+               curPoint.onclick=function (e) {
+
+                   var clickIndex=this.getAttribute('index');
+
+                   var offsetLeft=(index-clickIndex)*600;
+                   console.log(offsetLeft)
+                   move(list,offsetLeft);
+                   index=clickIndex;
+                   pointsShow();
+               }
+           } 
+        })();
+/*        points.addEventListener('click',function (e) {
+            var curEl=e.target;
+            if(curEl)
+            console.log(curEl);
+
+            list.style.left=
+            index=clickIndex;
+            curEl.addClass('on');
+        })*/
+
+        prev.addEventListener('click',function () {
+            index--;
+            if(index<0)
+                index=5;
+            move(list,600);
+        });
+        next.addEventListener('click',function () {
+            if(index>5)
+                index=1;
+            move(list,-600);
+        });
+
+        function stop() {
+            clearInterval(timer);
+/*            list.removeEventListener('mouseover',stop);
+            list.addEventListener('mouseout',start);*/
+        }
+        function start() {
+            timer=setInterval(function () {
+                index++;
+                if(index>5)
+                    index=1;
+                move(list,-600);
+            },2000);
+/*            list.removeEventListener('mouseout',start);
+            list.addEventListener('mouseover',stop);*/
+        }
+        function pointsShow() {
+            //这里需要清除之前的样式
+            for (var i = 0; i < points.length; i++) {
+                points[i].classList.remove('on')
+
+            }
+            //数组从0开始，故index需要-1
+            points[index - 1].classList.add('on');
+        }
+    }
+
+
+
+
+    function move(list,dis) {
+        var newLeft=list.offsetLeft+dis;
+//        console.log(newLeft)
+        if(newLeft<=-3600){
+                newLeft=-600;
+        }else if(newLeft>=-600){
+            newLeft=-3600;
+        }
+        list.style.left=newLeft+'px';
+    }
+</script>
+</body>
+</html>

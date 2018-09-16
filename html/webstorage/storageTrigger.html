@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改web storage中的数据</title>
+</head>
+<body>
+<label for="text1">请输入值：</label><input type="text" id="text1">
+<button onclick="setLocalStorage()">设置localStorage</button>
+<input type="button" value="设置sessionstorage" name="sessionstorage">
+<script>
+    function setLocalStorage() {
+        localStorage.test=document.getElementById('text1').value;
+    }
+    document.getElementsByName('sessionstorage')[0].addEventListener('click',function (event) {
+        console.log(event.target);
+        sessionStorage.setItem('session','session'+document.getElementById('text1').value);
+    })
+</script>
+
+</body>
+</html>

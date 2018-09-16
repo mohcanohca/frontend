@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>倒计时</title>
+    <style>
+        #clock {
+            display: inline-block;
+            /*height: 40px;*/
+            font-size: 24px;
+            background-color: #333333;
+            color: #fff;
+        }
+
+        #clock span {
+            display: inline-block;
+            padding: 10px;
+            line-height: 100%;
+        }
+    </style>
+</head>
+<body>
+<div id="clock">
+    <span id="days" class="number">12</span>
+    <span class="char">:</span>
+    <span id="hours" class="number">13</span>
+    <span class="char">:</span>
+    <span id="minutes" class="number">4</span>
+    <span class="char">:</span>
+    <span id="seconds" class="number">6</span>
+</div>
+
+<script>
+    var end = new Date();
+    end.setFullYear(2018,4, 10);
+    var endTime = end.getTime();
+
+
+    setInterval(count, 1000);
+
+    function count() {
+        var now = new Date();
+        var time = endTime - now.getTime();
+        time=Math.abs(time);
+
+        var result = calNum(time);
+
+        var days = document.getElementById('days');
+        var hours = document.getElementById('hours');
+        var minutes = document.getElementById('minutes');
+        var seconds = document.getElementById('seconds');
+
+        days.innerText = result.days;
+        hours.innerText = result.hours;
+        minutes.innerText = result.minutes;
+        seconds.innerText = result.seconds;
+    }
+
+    function calNum(time) {
+        var result = {
+            days: 0, hours: 0, minutes: 0, seconds: 0
+        };
+        time = Math.floor(time / 1000);
+        if (time != 0) {
+            result.seconds = time % 60;
+            time = (time - result.seconds) / 60;
+
+        }
+        if (time > 0) {
+            result.minutes = time % 60;
+            time = (time - result.minutes) / 60;
+
+
+        }
+        if (time > 0) {
+            result.hours = time % 24;
+            time = (time - result.hours) / 24;
+
+        }
+        if (time > 0) {
+            result.days = time;
+
+        }
+
+        return result;
+    }
+</script>
+</body>
+</html>

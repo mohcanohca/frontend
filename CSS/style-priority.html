@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css样式优先级</title>
+
+    <style>
+        #test{
+            color: blue;
+            border: 5px solid blue !important;
+        }
+        *{
+            font-size: 10px;
+        }
+/*        p{
+            font-size: 10px;
+        }*/
+        .large{
+            font-size: 30px;
+        }
+    </style>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        @import "sty.css";
+    </style>
+
+</head>
+<body>
+<div id="test" class="pink large" style="border: 1px solid blue">
+    有颜色的字体
+    <p class="small">
+        设置大小的字体
+        <span>inline-block</span>
+    </p>
+</div>
+<img src="../image/dajun.jpg" alt="">
+<input type="text" id="haha"><label for="haha">hahahahah</label>
+<textarea name="" id="" cols="30" rows="10"></textarea>
+
+<table border="1">
+    <caption>caption</caption>
+    <th>nihao</th>
+    <tr><th>1</th><th>23</th></tr>
+    <tr><th>1</th></tr>
+    <tr><th>1</th></tr>
+</table>
+
+<ul>
+    <li>1</li>
+    <li>1</li>
+</ul>
+
+<form action="POST">
+    <input type="text">
+    <button>button</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原生JS实现TODO-LIST</title>
+</head>
+<body>
+<div class="panel">
+    <div class="add-list">
+        <input type="text" id="todo"><label for="todo" id="add">添加</label>
+    </div>
+    <ul id="todo-lists"></ul>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded',function () {
+        var addBtn=document.getElementById('add');
+        addBtn.addEventListener('click',addList);
+
+    });
+    function addList() {
+        var todoLists=document.getElementById('todo-lists');
+        var value=document.getElementById('todo').value;
+        console.log(value);
+        if(value!=''){
+            var list=document.createElement('li');
+            list.innerHTML=value;
+            todoLists.appendChild(list);
+            var delBtn=document.createElement('button');
+            delBtn.innerText='delete';
+            list.appendChild(delBtn);
+            delBtn.setAttribute('value','delete');
+            delBtn.addEventListener('click',deleteList);
+            document.getElementById('todo').value='';
+        }
+    }
+    function deleteList(e) {
+        var parent=e.target.parentNode;
+        var gparent=parent.parentNode;
+        gparent.removeChild(parent);
+
+    }
+
+</script>
+</body>
+</html>

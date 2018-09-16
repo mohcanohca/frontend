@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>border-radius：XX%</title>
+    <style>
+
+        /*border-radius本质设置的是椭圆的长半径和短半径*/
+
+        /*border-radius设置百分比时，相对的是自身的宽高*/
+        .box{
+            width: 200px;
+            height: 100px;
+            background-color: pink;
+            border: 1px solid palevioletred;
+        }
+        /*单独设置一个角*/
+        .box:nth-child(1){
+            border-top-left-radius:100px 50px;
+            border-top-right-radius:50% 50%;
+            border-bottom-left-radius:10px;/*长短半径都设为10px*/
+            border-bottom-right-radius:20%;/*长半径为宽度的20%，短半径为高度的20%*/
+        }
+        /*缩写设置*/
+        .box:nth-child(2){
+            border-radius:20px;/*所有角设置相同值*/
+        }
+        .box:nth-child(3){
+            border-radius:10px 20px 0px 100px;/*顺时针从左上角开始设置*/
+        }
+        /*百分比设置*/
+        .box:nth-child(4){
+            border-radius:50%;
+        }
+
+        /*椭圆圆弧设置*/
+        .box:nth-child(5){
+            border-radius: 25%/50%; /* 前面一个值代表水平方向，后面一个值代表垂直方向 */
+        }
+
+        /*最大值特性：设置的半径长度不能超过元素本身的宽高，即使超过，也只能按照元素本身的宽高计算
+        等比例特性：实际显示的宽高和设置的宽高等比例出现*/
+        .box:nth-child(6){
+            border:50px solid palevioletred;
+            border-radius:0 0 200px 0/0 0 100px 0;
+        }
+        .box:last-child{
+            border-radius: 25% 0 0 0/50% 0 0 0;/* 注意，用这种方式分开设置角时要先设置所有角的水平半径，再设置所有角的垂直半径 */
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+</body>
+</html>

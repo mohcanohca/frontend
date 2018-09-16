@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>操作DOM元素</title>
+</head>
+<body>
+<div class="parent">
+    <div class="child">大孩子</div>
+    <div class="child">老二</div>
+    <div class="child">老三</div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded',afterLoaded);
+    function afterLoaded() {
+        console.log('ready');
+        /*需求：在选中节点之后插入一个同级的元素*/
+        var parent=document.getElementsByClassName('parent')[0];
+
+        var newEl=document.createElement('div');
+
+        //text属性可设置或返回元素的文本值
+        newEl.innerHTML='我是失散找回的';
+
+        parent.addEventListener('click',function (event) {
+
+            if(event.target.className=='child'){
+                insertAfter(newEl,event.target);
+            }
+        });
+
+        function insertAfter(newEl,el) {
+
+            var parent=el.parentNode;
+            console.log(parent);
+            var nextSibling=el.nextSibling;//获取el的下一个兄弟节点，如果没有，返回null
+            console.log(nextSibling);
+            console.log(newEl);
+            parent.insertBefore(newEl,nextSibling);
+        }
+    }
+
+</script>
+</body>
+</html>

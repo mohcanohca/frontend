@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form 基础功能</title>
+</head>
+<body>
+<form action="https://jsonplaceholder.typicode.com/posts" method="get" enctype="application/x-www-form-urlencoded">
+    <p>name:<input type="text" name="username"></p>
+    <p>age:<input type="text" name="userage"></p>
+    <p><input type="submit" value="提交"></p>
+</form>
+
+<script src="../../js/libs/jquery-3.3.1.min.js"></script>
+<script src="../../js/libs/jquery.form.js"></script>
+<script>
+    $(function(){
+        $('form').ajaxForm({
+            success: function(responseText){
+                console.log(responseText);
+            }
+        });
+    });
+</script>
+</body>
+</html>

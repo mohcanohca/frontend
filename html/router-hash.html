@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>前端路由-hash</title>
+</head>
+<body>
+<a href="#/" title="routing">router</a>
+<a href="#first" title="routing">first</a>
+<a href="#second" title="routing">second</a>
+<p id="show"></p>
+<script>
+
+    function Router() {
+        this.routers = {};//存放url与对应的回调函数
+        this.curUrl = '';//存储当前路径
+
+        this.route = function (path, callback) {
+            this.routers[path] = callback || function () {
+                show.innerHTML='没有指定该路径的处理函数'
+            };
+        };
+
+        this.refresh = function () {
+            this.curUrl = location.hash.slice(1) || '/';
+            this.routers[this.curUrl]();
+        };
+
+        this.ready=function () {
+            show.innerHTML='页面刚加载，'+'当前路径为'+(location.hash.slice(1)||location.href);
+        };
+
+        this.init = function () {
+            window.addEventListener('load', this.ready, false);
+            window.addEventListener('hashchange', this.refresh.bind(this), false);
+        };
+
+    }
+
+    var R = new Router();
+
+    R.init();
+
+    var show = document.getElementById('show');
+
+    R.route('/', function () {
+        show.innerHTML = '现在是默认路径/'
+    });
+    R.route('first', function () {
+        show.innerHTML = '现在是first'
+    });
+    R.route('second', function () {
+        show.innerHTML = '现在是second'
+    });
+
+</script>
+</body>
+</html>

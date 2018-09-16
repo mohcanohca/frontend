@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM-Node类型</title>
+    <script>
+        function log(e) {
+            return console.log(e);
+        }
+
+        document.addEventListener('DOMContentLoaded',function () {
+            log(document.getElementById('main').contains(document.getElementsByClassName('child')[0]));
+            var el=document.getElementById('main');
+            //nodeType获取节点类型
+            var nodeType=el.nodeType;//1表示元素节点
+//            log(document.nodeType);//9 表示文档节点
+
+            if(nodeType==1){
+                //nodeName 获取标签名
+//                log(el.nodeName);//DIV
+
+                //nodeValue 获取标签值
+//                log(el.nodeValue);//null 元素节点的nodeValue始终是null
+            }
+
+            //节点关系
+
+            //childNodes:所有节点都有，返回一个NodeList对象（类数组）
+            var childNodes=el.childNodes;
+            /*log(childNodes[0]);
+            log(childNodes.item(3));
+            log(childNodes.length);*/
+
+            //parentNode
+//            log(el.parentNode);
+
+            var center=el.childNodes[3];
+/*            log(center.previousElementSibling);
+            log(center.nextElementSibling);*/
+
+//            el.appendChild(center);
+
+            //insertBefore返回第一个参数，即新插入节点
+//            var returnNode= el.insertBefore(center,el.firstChild);
+//            log(returnNode==center);
+
+            var newNode=document.createElement('div');
+            newNode.id='newNode';
+            newNode.innerHTML='newnewnew';
+
+//            log(el.replaceChild(newNode,el.lastChild));
+
+//            log(el.removeChild(center)==center);//true
+            var deepList=el.cloneNode(true);
+//            log(deepList.childNodes.length);
+            var shallowList=el.cloneNode(false);
+//            log(shallowList.childNodes.length);
+
+
+        });
+    </script>
+
+</head>
+<body>
+<div id="main">
+    <div class="child">长子</div>
+    <div class="child">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <div class="child">老幺</div>
+</div>
+
+<script src="basicMethods.js"></script>
+<script>
+
+    <!--事件托管到父级元素-->
+    document.getElementById('main').addEventListener('click',function (e) {
+        console.log(isElement(e.target));
+    });
+
+
+</script>
+</body>
+</html>

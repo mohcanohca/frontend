@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="page">
+
+    <div class="content main">
+
+        <div class="refer">
+
+            <ul>
+
+                <li>1</li>
+
+                <li>2</li>
+
+
+            </ul>
+
+        </div>
+
+    </div>
+
+    <div class="content main">
+
+        <div class="refer">
+
+            <ul>
+
+                <li>sss</li>
+
+                <li>rrr</li>
+
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
+<script>
+    function fen(e) {
+        var cur=e;
+        var result=[];
+        while(cur!=document.html){
+
+            result.unshift(getNodeAttr(cur));
+            cur=cur.parentNode;
+        }
+        result.shift();
+        return result.join(' ');
+    }
+    function getNodeAttr(node) {
+        var name='';
+        if(node.id){
+            name+='#'+node.id;
+        }
+        if(node.className){
+            name+='.'+node.className.replace(/\s+/g,'.');
+        }
+        if(!name){
+            name+=node.nodeName.toLowerCase();
+        }
+        return name;
+    }
+    document.addEventListener('click', function(e){
+        //点击li时，返回：html body #page .content.main .refer ul li
+        console.log(fen(e.target));
+    })
+
+    var page=document.getElementById('page');
+
+</script>
+</body>
+</html>

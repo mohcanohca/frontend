@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>两栏布局-右侧定宽，左侧自适应</title>
+    <style>
+        @import "../libs/normalize.css";
+    </style>
+    <style>
+        html,body{
+            /*height: 100%;*/
+        }
+        .container{
+            position: relative;
+            height: 100%;
+            background-color: #cccccc;
+            /*display: flex;*/
+            width: 100%;
+            display: table;
+        }
+        .left,.right{
+            display: table-cell;
+            table-layout: fixed;
+        }
+        .left{
+            background-color: #ffa0be;
+            height: 100%;
+   /*         float: right;
+            width: 200px;*/
+
+        }
+        .right{
+            background-color: #F6E236;
+            height: 100%;
+            /*overflow: hidden;*/
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="left">左</div>
+    <div class="right">右</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>柯里化</title>
+</head>
+<body>
+<script>
+//    柯里化
+    function curry(fn) {
+        var args=Array.prototype.slice.call(arguments,1);//获取传入的设置好的参数
+        return function () {
+//            console.log(innerArgus);//undefined。没有报错是因为该匿名函数在执行前会先创建一个变量对象，将函数中声明的属性添加到该变量对象中，值为undefined
+            var innerArgus=Array.prototype.slice.call(arguments,0);//获取内部函数的所有参数
+            var finalArgus=args.concat(innerArgus);
+//            console.log(this);//window
+
+            return fn.apply(null,finalArgus);
+        }
+    }
+
+    function curry2(fn) {
+        var args=Array.prototype.slice.call(arguments,1);
+        return function () {
+            var innerArgs=Array.prototype.slice.call(arguments,0);
+            var finalArg=args.concat(innerArgs);
+
+            return fn.apply(null,finalArg);
+        }
+    }
+
+//    柯里化作为bind的一部分
+    function bind(fn,context) {
+        var args=Array.prototype.slice.call(arguments,2);
+        return function () {
+            var innerArgus=Array.prototype.slice.call(arguments,0);
+            var finalArgus=args.concat(innerArgus);
+            return fn.apply(context,finalArgus);
+        }
+    }
+
+    function add(num1,num2) {
+        return num1+num2;
+    }
+function sum() {
+    var args=Array.prototype.slice.call(arguments);
+    var ans=0;
+    for(var i=0;i<args.length;i++){
+        ans+=args[i];
+    }
+    return ans;
+}
+
+    var curAdd=curry(sum,0);
+    console.log(curAdd(1)());
+//    console.log(curry(add,5)(20));
+</script>
+</body>
+</html>

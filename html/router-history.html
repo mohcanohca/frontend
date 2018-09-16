@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>前端路由-history api实现</title>
+</head>
+<body>
+
+<div id="show" style="height: 100px">
+
+</div>
+
+<ul id="list">
+    <li>111</li>
+    <li>222</li>
+    <li>333</li>
+</ul>
+<script>
+;(function () {
+/*    var menu=document.getElementById('menu');
+    var show=document.getElementById('show');
+    menu.addEventListener('click',function (e) {
+        e.preventDefault();
+        var el=e.target;
+        window.history.pushState({path:el.href,title:el.title},null,el.href);
+        show.innerHTML='current page is' + el.title;
+    });
+    */
+    document.getElementById('list').addEventListener('click',function (e) {
+        var  text=e.target.innerText;
+        show.innerText=text;
+        //将状态对象{stateobj:text}与指定的url相关联
+        window.history.pushState({stateobj:text},null,'/'+text);
+    });
+
+    //监听popstate事件
+    window.addEventListener('popstate',function (e) {
+        //获取与当前url绑定的状态对象
+        show.innerText='current page is'+e.state.stateobj;
+    })
+})();
+</script>
+</body>
+</html>

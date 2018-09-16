@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML嵌套规则</title>
+    <style>
+        .hahah{
+            width: 300px;
+            background-color: pink;
+        }
+        .selfDefined{
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+<table id="ttt" border="6">
+    <caption>标题</caption>
+    <tr><th>表头</th><th>表头</th></tr>
+    <tr><td>行1 列1</td><td>行1 列2</td></tr>
+    <tr><td>行2 列1</td><td>行2 列2</td></tr>
+
+    <!--使用空格占位符，将边框显示出来-->
+    <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+</table>
+<script>
+    var table=document.getElementsByTagName('table')[0];
+    var attr=document.createAttribute('class');
+    attr.value='selfDefined';
+    table.setAttributeNode(attr);
+    console.log(table.attributes);
+    console.log(table.getAttribute('id'));
+    console.log(table.setAttribute('class','hahah'));
+</script>
+</body>
+</html>

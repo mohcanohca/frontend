@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>深拷贝和浅拷贝</title>
+</head>
+<body>
+<script>
+    var china = {
+        nation: '中国',
+        birthplaces: ['北京', '上海', '广州'],
+        skincolr: 'yellow',
+        friends: {
+            name:'张三'
+        }
+    }
+    //浅复制：只复制了对象的属性值，如果对象的属性值是引用类型，复制的是引用
+    function shallowCopy(o,c) {
+        var c=c||{};
+        for(var pro in o){//遍历该对象拥有的属性（实例属性+从原型链上继承的属性）
+            if(o.hasOwnProperty(pro)){
+                c[pro]=o[pro];
+            }
+        }
+    }
+    //深复制：复制出一个一模一样的新对象，没有引用类型对象的共享问题
+    function deepCopy(o,c) {
+        var c=c||{};
+        for(var prop in o){
+            if(o.hasOwnProperty(prop)){
+                if(typeof o[prop] ==='object'&& Object.prototype.toString.call(o[prop])!=='[object Null]'){
+                    if(o[prop] instanceof Array){
+                        //若是数组
+                        c[prop]=[];
+                    }else{
+                        c[prop]={};
+                    }
+                    deepCopy(o[prop],c[prop]);
+                }else{
+                    c[prop]=o[prop];
+                }
+            }
+        }
+    }
+
+    function deep(dst,src) {
+        var dst=dst||{};
+        for(var prop in src){
+
+            if(src.hasOwnProperty(prop)){
+                console.log(prop);
+                console.log(typeof src[prop]);
+                if(typeof src[prop] ==='object'){
+                    //若是复杂数据类型
+                    if(src[prop] instanceof Array){
+                        dst[prop]=[];
+                    }else {
+                        dst[prop]={};
+                    }
+                    deep(dst[prop],src[prop]);
+                }else{
+                    //若是基本数据类型
+                    dst[prop]=src[prop];
+                }
+            }
+        }
+    }
+
+    var source={
+        name:"source",
+        age:undefined
+    }
+    var target={};
+    deep(target,source);
+
+    var r1 = {nation: 'home1'};
+    var r2 = {nation: 'home2'};
+    var r3 = {nation: 'home3'};
+    shallowCopy(china,r1);
+    shallowCopy(china,r2);
+    r1.friends.name='r1的朋友';
+
+    deepCopy(china, r2);
+    console.dir(r1);
+    console.dir(r2);//console.dir()显示一个对象的所有属性和方法
+    console.dir(r3);
+</script>
+</body>
+</html>

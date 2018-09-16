@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS实现三角形</title>
+    <style>
+        .triangle1{
+            width:0;
+            height:0;
+            border:10px solid transparent;
+            border-top:10px solid pink;
+
+
+        }
+
+        .triangle2{
+            font-size: 40px;
+            top:-20px;
+        }
+        .triangle3{
+            width:40px;
+            height:40px;
+            background-color: brown;
+            position: relative;
+            top:-20px;
+            left:5px;
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body>
+<div class="triangle1"></div>
+<br>
+<br>
+<div><div class="triangle2">◆</div></div>
+
+<div style="overflow: hidden">
+<div class="triangle3"></div>
+</div>
+</body>
+</html>

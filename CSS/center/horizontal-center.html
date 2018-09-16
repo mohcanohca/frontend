@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>水平居中</title>
+    <style>
+        .inline{text-align: center;background-color: #888888}
+        .block-container{
+            background-color: pink;
+        }
+        .block-container .block-center{
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+            background-color: white;
+            line-height: 100px;
+        }
+
+        .blocks-container{
+            text-align: center;
+        }
+
+        .blocks-container .block-center{
+            display: inline-block;
+        }
+
+        .flex-container{
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+
+<!--行内或类行内元素-->
+<div class="inline" style="text-align: center;">
+    <p>我要水平居中</p>
+</div>
+
+<!--块级元素-->
+<div class="block-container">
+    <div class="block-center">
+        我要水平居中
+    </div>
+</div>
+
+<!--多个块级元素在同一水平线居中-->
+<!--父容器：text-align:center  ；  居中元素：display：inline-block-->
+<div class="blocks-container">
+    <div class="block-center">居中</div>
+    <div class="block-center">居中</div>
+    <div class="block-center">居中</div>
+    <div class="block-center">居中</div>
+</div>
+
+<!--flexbox-->
+<div class="flex-container">
+    <div class="flexbox">居中</div>
+    <div class="flexbox">居中</div>
+    <div class="flexbox">居中</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>手机计算器</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html{
+            font-size: 62.5%;
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+
+        #container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+        }
+
+        #show {
+            width: 100%;
+            position: relative;
+            flex: 1;
+            border-bottom: 1px solid #cccccc;
+            padding: 2%;
+        }
+        #result{
+            position: absolute;
+            right: 2%;
+            bottom: 2%;
+            font-size: 10rem;
+            font-weight: bolder;
+        }
+        #control {
+            position: relative;
+            width: 100%;
+            padding: 1%; /*padding是相对于父元素的宽度计算的*/
+        }
+
+        .btn-list {
+            width: 100%;
+            padding: 1% 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .btn {
+            width: 23%;
+            position: relative;
+            background-color: #888888;
+            color: #fff;
+            border-radius: 50%;
+
+        }
+        .btn.active{
+            background-color: #cccccc;
+        }
+
+        .btn:before {
+            content: '';
+            display: block;
+            position: relative;
+            padding-top: 100%;
+        }
+
+        .btn span {
+            position: absolute;
+            font-size: 4rem;
+            left: 50%; /*基于父元素宽度*/
+            top: 50%; /*基于父元素高度*/
+            /*margin-top: 50%;!*基于父元素宽度*!
+            margin-left: 50%;!*基于父元素宽度*!*/
+            transform: translateX(-50%) translateY(-50%);
+        }
+
+        .btn-list:last-child .btn:first-child {
+            width: 48%;
+            border-radius: 25%/50%;
+        }
+        .btn-list:last-child .btn:first-child span{
+            left: 25%;
+        }
+
+        .btn-list:last-child .btn:first-child:before {
+            content: '';
+            display: block;
+            padding-top: 50%;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="show"><span id="result">100</span></div>
+    <div id="control">
+        <div class="btn-list">
+            <div class="btn"><span>AC</span></div>
+            <div class="btn"><span>C</span></div>
+            <div class="btn"><span>+/-</span></div>
+            <div class="btn"><span>/</span></div>
+        </div>
+        <div class="btn-list">
+            <div class="btn"><span>7</span></div>
+            <div class="btn"><span>8</span></div>
+            <div class="btn"><span>9</span></div>
+            <div class="btn"><span>*</span></div>
+        </div>
+        <div class="btn-list">
+            <div class="btn"><span>4</span></div>
+            <div class="btn"><span>5</span></div>
+            <div class="btn"><span>6</span></div>
+            <div class="btn"><span>+</span></div>
+        </div>
+        <div class="btn-list">
+            <div class="btn"><span>1</span></div>
+            <div class="btn"><span>2</span></div>
+            <div class="btn"><span>3</span></div>
+            <div class="btn"><span>-</span></div>
+        </div>
+        <div class="btn-list">
+            <div class="btn"><span>0</span></div>
+            <div class="btn"><span>.</span></div>
+            <div class="btn"><span>=</span></div>
+        </div>
+    </div>
+</div>
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+    $('.btn').on('click',function (e) {
+        $(this).addClass('active');
+    })
+</script>
+</body>
+</html>

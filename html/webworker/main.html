@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="num"></div>
+<script>
+    //主线程
+
+    //Web Worker 是为了解决 JavaScript 在浏览器环境中没有多线程的问题。支持 Web Worker 的浏览器会额外提供一个JavaScript Runtime 供 Web Worker 使用。它的最佳使用场景是执行一些开销较大的数据处理或计算任务。
+
+    //创建一个worker对象，参数是js文件路径，文件中的js代码运行在主线程之外的worker线程
+    var worker=new Worker('worker.js');
+
+    //通过监听接收消息
+    worker.onmessage=function (e) {
+        console.log(JSON.parse(e.data));
+    };
+    var mess="hello, i'm main";
+
+    //通过postMessage发送消息
+    worker.postMessage(mess);
+    console.log(navigator.hardwareConcurrency);//机器支持的并行最大任务数
+</script>
+</body>
+</html>
