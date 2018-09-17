@@ -4,9 +4,24 @@
     <meta charset="utf-8">
     <title>菜鸟教程(runoob.com)</title>
     <style>
-        p.small {line-height:70%;
-            font-size: 20px;}
-        p.big {line-height:200%;}
+        p.small {
+            /*line-height是继承属性，表示两行文本基线间的高度差*/
+            /*
+            normal：默认值设置合理的间距，若父元素设置了line-height，默认会从父元素继承
+            数字n：设为当前字体大小的n倍
+            m个px：设置行间距为m个px
+            %：基于当前字体尺寸设置
+            inherit：从父元素继承，继承的是具体的px值
+            */
+            line-height: inherit;
+
+            /*font-size是继承属性，若所有上层元素都没有设置，继承body的font-size：16px*/
+            font-size: 20px;
+        }
+
+        p.big {
+            line-height: 200%;
+        }
     </style>
 </head>
 
@@ -17,11 +32,15 @@
     大多数浏览器的默认行高约为110%至120%。<br>
 </p>
 
-<div style="height: 40px">
+<div style="height: 40px;">
     <p class="small">
-        这是一个更小行高的段落。<br>
         这是一个更小行高的段落。
     </p>
+    <p class="small">这是一个更小行高的段落。</p>
+</div>
+
+<div style="font-size: 10px;background-color: rgba(255,160,190,0.5)">
+    <p style="font-size: 3em">3em有多高</p>
 </div>
 
 

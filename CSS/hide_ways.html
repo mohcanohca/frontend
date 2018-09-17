@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>比较隐藏标签的几种方式</title>
+    <style>
+        .test{
+            width: 100px;
+            height: 100px;
+            background-color: #F6E236;
+        }
+
+        #hide_visibility{
+            visibility: hidden;/*隐藏元素，元素仍占据空间，但是鼠标事件无法响应*/
+        }
+    </style>
+</head>
+<body>
+
+<div id="hide_visibility" class="test" onclick="alert('click!')"></div>
+<p>在后面的文字</p>
+</body>
+</html>
