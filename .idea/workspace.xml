@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed17d9d7-dd64-4f54-9cb1-43ae2fcf3978" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hotdix" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/test" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,7 +19,7 @@
       <file leaf-file-name="2.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/onlinejudge/360/2.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
+            <state>
               <caret line="17" column="17" selection-end-line="27" />
             </state>
           </provider>
@@ -30,8 +28,8 @@
       <file leaf-file-name="333.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/onlinejudge/360/333.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+            <state relative-caret-position="423">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -90,7 +88,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="600" />
     <option name="y" value="8" />
     <option name="width" value="828" />
@@ -152,7 +150,7 @@
       <updated>1537104781559</updated>
       <workItem from="1537104788432" duration="114000" />
       <workItem from="1537145283446" duration="15703000" />
-      <workItem from="1537232435033" duration="3886000" />
+      <workItem from="1537232435033" duration="3899000" />
     </task>
     <task id="LOCAL-00001" summary="refact:结构调整">
       <created>1537174550524</created>
@@ -165,7 +163,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19703000" />
+    <option name="totallyTimeSpent" value="19716000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -177,7 +175,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="600" y="8" width="828" height="735" extended-state="1" />
+    <frame x="600" y="8" width="828" height="735" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2278481" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
@@ -270,15 +269,18 @@
     <entry file="file://$PROJECT_DIR$/hotdix" />
     <entry file="file://$PROJECT_DIR$/onlinejudge/360/2.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
+        <state>
           <caret line="17" column="17" selection-end-line="27" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/onlinejudge/360/333.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="423">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
