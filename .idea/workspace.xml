@@ -17,7 +17,7 @@
       <file leaf-file-name="2.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/onlinejudge/360/2.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
+            <state>
               <caret line="17" column="17" selection-end-line="27" />
             </state>
           </provider>
@@ -26,8 +26,8 @@
       <file leaf-file-name="333.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/onlinejudge/360/333.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+            <state relative-caret-position="402">
+              <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -86,7 +86,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="600" />
     <option name="y" value="8" />
     <option name="width" value="828" />
@@ -105,17 +105,6 @@
             <path>
               <item name="baseKnowledge" type="b2602c69:ProjectViewProjectNode" />
               <item name="baseKnowledge" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="baseKnowledge" type="b2602c69:ProjectViewProjectNode" />
-              <item name="baseKnowledge" type="462c0819:PsiDirectoryNode" />
-              <item name="onlinejudge" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="baseKnowledge" type="b2602c69:ProjectViewProjectNode" />
-              <item name="baseKnowledge" type="462c0819:PsiDirectoryNode" />
-              <item name="onlinejudge" type="462c0819:PsiDirectoryNode" />
-              <item name="360" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -185,8 +174,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="600" y="8" width="828" height="735" extended-state="1" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2278481" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2278481" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -194,15 +184,26 @@
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.5139116" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.49667773" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.4893617" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2278481" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.5139116" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.49667773" />
+      <window_info id="Favorites" order="2" side_tool="true" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -277,15 +278,62 @@
     <entry file="file://$PROJECT_DIR$/hotdix" />
     <entry file="file://$PROJECT_DIR$/onlinejudge/360/2.js">
       <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="17" column="17" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/onlinejudge/360/333.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="423">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/onlinejudge/360/2.js">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
+          <caret line="17" column="17" lean-forward="true" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/onlinejudge/360/333.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="15" column="30" selection-end-line="21" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSS/center/center.html" />
+    <entry file="file://$PROJECT_DIR$/2.html" />
+    <entry file="file://$PROJECT_DIR$/b917" />
+    <entry file="file://$PROJECT_DIR$/CSS/style-priority.html" />
+    <entry file="file://$PROJECT_DIR$/LICENSE" />
+    <entry file="file://$PROJECT_DIR$/CSS/center/center-layout.html" />
+    <entry file="file://$PROJECT_DIR$/CSS/position/fixed&amp;sticky&amp;absolute.html" />
+    <entry file="file://$PROJECT_DIR$/CSS/hide_ways.html" />
+    <entry file="file://$PROJECT_DIR$/CSS/line-height.html" />
+    <entry file="file://$PROJECT_DIR$/hotdix" />
+    <entry file="file://$PROJECT_DIR$/onlinejudge/360/2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
           <caret line="17" column="17" selection-end-line="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/onlinejudge/360/333.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="402">
+          <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
