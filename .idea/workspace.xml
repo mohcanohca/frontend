@@ -23,21 +23,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="333.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="333.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/onlinejudge/360/333.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
+            <state relative-caret-position="93">
               <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="revert.txt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/revert.txt">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -166,7 +161,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19836000" />
+    <option name="totallyTimeSpent" value="21041000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -179,6 +174,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="600" y="8" width="828" height="735" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2278481" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
@@ -334,18 +330,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/revert.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="12" lean-forward="true" selection-start-column="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/onlinejudge/360/333.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
+        <state relative-caret-position="93">
           <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/revert.txt">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
