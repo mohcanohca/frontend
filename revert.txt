@@ -1,2 +1,5 @@
+<<<<<<< HEAD
 modify
 modify
+=======
+>>>>>>> parent of 2c8029a... modify revert.txt
