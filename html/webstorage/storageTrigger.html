@@ -10,7 +10,7 @@
 <input type="button" value="设置sessionstorage" name="sessionstorage">
 <script>
     function setLocalStorage() {
-        localStorage.test=document.getElementById('text1').value;
+        localStorage.setItem('local',document.getElementById('text1').value);
     }
     document.getElementsByName('sessionstorage')[0].addEventListener('click',function (event) {
         console.log(event.target);

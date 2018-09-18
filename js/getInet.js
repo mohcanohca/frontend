@@ -10,9 +10,9 @@ function getIntersection() {
             if(!min){
                 min=cur[0];
                 max=cur[1];
-            }
+                ;          }
             min=Math.max(min,cur[0]);
-            max=Math.min(max,cur[1]);
+            max=Math.min(max,cur[1])
             if(min>max)
                 return null;
         }else{

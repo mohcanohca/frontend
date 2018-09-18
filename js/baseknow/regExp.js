@@ -1,3 +1,11 @@
+//匹配11位数字
+var reg=/\d{11}/g;
+var str='1a1524583745231111111111111';
+var res=str.match(reg);
+console.log(res);
+
+
+
 /*
 正则表达式
 1、正则.test(字符串)
@@ -6,6 +14,7 @@
 //定义正则
 var reg1=new RegExp('a');//RegExp对象。参数就是我们想要制定的规则。有一种情况必须用这种方式。
 var reg2=/a/;
+
 
 //1、正则.test(字符串)
 //在字符串中查找符合正则的内容，若查找到返回true,反之返回false

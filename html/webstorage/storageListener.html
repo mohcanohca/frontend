@@ -5,12 +5,11 @@
     <title>利用storage事件监听web storage中的数据</title>
 </head>
 <body>
-<div id="localoutput"></div>
-<div id="sesseionoutput"></div>
+<div id="localoutput" style="background-color: #ffa0be;height: 100px"></div>
+<div id="sesseionoutput" style="background-color: #F6E236;height: 100px"></div>
 <script>
-    window.addEventListener('storage',function (event) {
-        alert("listened")
-        if(event.key=='test'){
+    window.addEventListener('storage',function (event){
+        if(event.key=='local'){
             var output=document.getElementById('localoutput');
             output.innerHTML="原有值："+event.oldValue;
             output.innerHTML+="<br/>现有值："+event.newValue;

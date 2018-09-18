@@ -1,0 +1,107 @@
+<!Doctype html>
+<html>
+<head>
+    <title>实现拖拽</title>
+    <style>
+        #box{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            background-color: #ffa0be;
+            cursor: move;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+</body>
+<script>
+
+    /**
+     * 步骤
+     使用 JavaScript 实现拖拽的步骤：
+
+     让元素捕获事件（mousedown, mousemove & mouseup）
+     单击并不释放，触发 mousedown，标记开始拖拽，并获取元素和鼠标的位置
+     拖动鼠标，触发 mousemove，不断的获取鼠标的位置，并通过计算重新确定元素的位置
+     释放师表，触发 mouseup，结束拖拽，确定元素位置并更新
+     */
+    (function () {
+        var dragging=false;
+        var box=document.getElementById('box');
+
+        var boxX,//盒子在文档流中的当前位置
+            boxY,
+            mouseX,//鼠标位置
+            mouseY,
+            offsetX,//纪录偏移了多少
+            offsetY;
+
+        box.addEventListener('mousedown',down,false);//在冒泡阶段执行，默认是false
+        box.addEventListener('mousemove',move);
+        box.addEventListener('mouseup',up);
+
+        function down(e) {
+            dragging=true;
+            //如果当前元素仍在普通流中（即position值为static或者relative），offsetLeft获取的是当前元素距流中父元素左侧的值，包括父元素的padding-left、margin-left、border-left，注：IE下有误差；
+            // 如果当前元素已从普通流中删除，使用了绝对定位absolute或固定定位fixed，offsetLeft获取的是当前元素距已定位的父元素左侧的值，即left+当前元素的margin-left
+            boxX=box.offsetLeft;
+            boxY=box.offsetTop;
+            mouseX = parseInt(getMouseXY(e).x);
+            mouseY = parseInt(getMouseXY(e).y);
+            offsetX = mouseX - boxX;//纪录点击位置与盒子的左上角的偏移量
+            offsetY = mouseY - boxY;
+        }
+
+        function move(e) {
+            if(dragging){
+                var x=getMouseXY(e).x-offsetX;
+                var y=getMouseXY(e).y-offsetY;
+
+                //clientWidth：获取对象可视区的宽度，不包括滚动条等边线，会随对象显示大小的变化而变化
+                //offsetWidth：对象整体的实际宽度，包括滚动条等边线，会随对象显示大小的变化而改变。
+                //document.documentElement.clientWidth获取页面对象宽度
+
+                var width=document.documentElement.clientWidth-box.offsetWidth;//除了盒子外剩余空间的宽度
+                var height=document.documentElement.clientHeight-box.offsetHeight;
+
+                x = Math.min(Math.max(0, x), width);
+                y = Math.min(Math.max(0, y), height);
+
+                box.style.left=x+'px';
+                box.style.top=y+'px';
+
+            }
+        }
+
+        function up(e) {
+            dragging=false;
+
+        }
+
+        function getMouseXY(e) {
+            var x = 0, y = 0;
+            e = e || window.event;
+            /**
+             * clientX / clientY : 相对浏览器窗口坐标
+             * offsetX / offsetY : 相对事件目标对象坐标
+             * pageX / pageY : 相对 document 对象坐标,IE不支持
+             */
+            if (e.pageX) {
+                x = e.pageX;
+                y = e.pageY;
+            } else {
+                //clientX事件属性返回当事件被触发时鼠标指针向对于浏览器页面（或客户区）的水平坐标
+                //scrollLeft：匹配元素的滚动条的水平位置
+                //clientLeft：元素的左边框宽度，若文本为从右向左，且导致左侧出现垂直滚动条，则clientLeft包括滚动条宽度
+                x = e.clientX + document.body.scrollLeft - document.body.clientLeft;
+                y = e.clientY + document.body.scrollTop - document.body.clientTop;
+            }
+            return {
+                x: x,
+                y: y
+            };
+        }
+    })();
+</script>
+</html>
