@@ -23,16 +23,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="333.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="333.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/onlinejudge/360/333.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="402">
+            <state relative-caret-position="80">
               <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="revert.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/revert.txt">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -161,7 +166,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19075000" />
+    <option name="totallyTimeSpent" value="19836000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -173,15 +178,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="600" y="8" width="828" height="735" extended-state="1" />
-    <editor active="true" />
+    <frame x="600" y="8" width="828" height="735" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2278481" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2278481" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.5139116" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.51328903" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.4893617" />
@@ -332,13 +336,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/onlinejudge/360/333.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
+        <state relative-caret-position="80">
           <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/revert.txt">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
