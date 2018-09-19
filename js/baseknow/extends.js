@@ -22,7 +22,7 @@ Animal.prototype.eat = function(food) {
 缺点：
 1. 无法实现多继承
 2. 来自原型对象的引用属性为所有实例共享
-3. 若要增加原型属性和方法必须在new Aniaml()之后
+3. 若要增加原型属性和方法必须在 子构造函数.prototype=new 父构造函数()  之后
 4. 创建子类实例时，无法向父类构造函数传参
  */
 function Cat(){
