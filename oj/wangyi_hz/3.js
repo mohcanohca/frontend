@@ -10,7 +10,7 @@
 var str;
 while (str = readline()) {
     var len = str.length;
-    var dp = new stray(len);
+    var dp = new Array(len);
     var max = 1;
     dp[0] = 1;
 
@@ -18,7 +18,7 @@ while (str = readline()) {
     for (var i = 1; i < len; i++) {
         if (str[i] == str[i - 1]) {
             //若当前位置与前一位置颜色相同，说明它是新子串的第一个
-            ap[i] = 1;
+            dp[i] = 1;
         } else {
             dp[i] = dp[i - 1] + 1;
             max = Math.max(dp[i], max);//更新最大值
@@ -28,7 +28,7 @@ while (str = readline()) {
     if (str[0] !== str[len - 1]) {
         //如果首尾元素不同，可能会拼接得到更长的子串
         var index = 1;
-        while (str[index] !== 1) {
+        while (dp[index] !== 1) {
             index++;
         }
         max = Math.max(max, dp[index - 1] + dp[len - 1]);
