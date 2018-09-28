@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body, html {
+            margin: 0;
+        }
+
+        table {
+            /*border-collapse: collapse;*/
+            border-collapse: separate;
+            table-layout: fixed;
+            margin: 10px auto;
+        }
+
+        td {
+            border: 1px solid #E1E1E1;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+        }
+
+        .current {
+            background: #1D2088;
+        }
+
+        .wrap {
+            background: #00A0E9;
+        }
+    </style>
+</head>
+<body>
+<table id="jsLayout" border="5">
+    <tbody>
+    <tr>
+        <td class="current"></td>
+        <td class="wrap"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td class="wrap"></td>
+        <td class="wrap"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    </tbody>
+</table>
+<script>
+    function bind() {
+        var center=document.getElementsByClassName('current')[0];
+        var wrapper = document.getElementsByClassName('wrap');
+        var container = document.getElementById('jsLayout');
+        var centerLine;
+        var topLine;
+        var bottomLine;
+        
+        container.addEventListener('click',function (e) {
+            if(!e.target.matches("td")){
+                return;
+            }
+            reset(center, wrapper);
+            wrapper=[];
+            center = e.target;
+
+            var parentTR = center.parentNode;
+            var parentTBODY = parentTR.parentNode;
+            var centerLine = parentTR.children;
+            var siblingTR = parentTBODY.children;
+            
+            var index = [].indexOf.call(centerLine,center);
+            var indexP = [].indexOf.call(siblingTR,parentTR);
+
+            if (indexP - 1 >= 0) {
+                topLine=siblingTR[indexP - 1].children;
+                if (index - 1 >= 0) {
+                    wrapper.push(topLine[index - 1]);
+                }
+
+                wrapper.push(topLine[index]);
+                if (index + 1 < centerLine.length) {
+                    wrapper.push(topLine[index + 1]);
+                }
+            }
+
+            //第二行
+            if (index - 1 >= 0) {
+                wrapper.push(centerLine[index - 1]);
+            }
+            if (index + 1 < centerLine.length) {
+                wrapper.push(centerLine[index + 1]);
+            }
+
+
+            //第三行
+            if (indexP + 1 < siblingTR.length) {
+                bottomLine=siblingTR[indexP + 1].children;
+                if (index - 1 >= 0) {
+                    wrapper.push(bottomLine[index - 1]);
+                }
+                wrapper.push(bottomLine[index]);
+                if (index + 1 < centerLine.length) {
+                    wrapper.push(bottomLine[index + 1]);
+                }
+            }
+
+            add(center, wrapper);
+        }, false);
+    }
+
+    function add(center, wrapper) {
+        center.setAttribute('class', 'current');
+        for (var i = 0; i < wrapper.length; i++) {
+            wrapper[i].setAttribute('class', 'wrap');
+        }
+    }
+
+    function reset(center, wrapper) {
+
+        center.removeAttribute('class');
+        var length=wrapper.length;
+        for (var j = length-1; j >=0 ; j--) {
+            wrapper[j].removeAttribute('class');
+        }
+    }
+    bind();
+</script>
+</body>
+</html>
