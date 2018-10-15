@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mouseover、mouseout、mouseenter、mouseleave区别</title>
+</head>
+<style>
+    .parent {
+        width: 100px;
+        height: 100px;
+        background: palegoldenrod;
+    }
+
+    .child {
+        position: relative;
+        top: 40px;
+        width: 50px;
+        height: 50px;
+        background: pink;
+    }
+
+</style>
+<body>
+<p>
+    mouseover：当鼠标指针位于元素上方时，触发，常与mouseout事件一起使用。
+</p>
+<i>不论鼠标指针是否穿过被选元素或其子元素，都会触发mouseover事件，准确说是子元素的mouseover事件冒泡到父元素造成父元素又发生了一次mouseover事件</i>
+<div class="parent">
+    父亲<span></span>
+    <div class="child">
+        儿子
+    </div>
+</div>
+
+<p>
+    mouseenter:当鼠标指针穿过元素时，会发生mouseenter，常与mouseleave事件一起使用
+</p>
+<i>
+    只有鼠标指针穿过被选元素时，才会触发mouseenter事件。把子元素看做该元素的一部分。而mouseover在穿过子元素时也会触发
+</i>
+
+<div class="parent">
+    父亲<span></span>
+    <div class="child">
+        儿子
+    </div>
+</div>
+
+<p>
+    区别：
+    mouseover：不论鼠标穿过被选元素或其子元素，都会触发mouseover事件
+    mouseenter：只有在鼠标穿过被选元素时才会触发mouseenter事件
+    mouseout：不论鼠标离开被选元素还是其子元素，都会触发mouseout事件
+    mouseleave：只有鼠标离开被选元素时，才会触发mouseleave事件
+</p>
+
+<script type="text/javascript">
+    var x = 0;
+    var parent = document.getElementsByClassName('parent')[0];
+    var parent1 = document.getElementsByClassName('parent')[1];
+    var child = document.getElementsByClassName('child')[0];
+    var child1 = document.getElementsByClassName('child')[1];
+    parent.addEventListener('mouseover', function () {
+        var span = parent.getElementsByTagName('span')[0];
+        span.innerText = ++x;
+        console.log('mouseover')
+    }, false);
+
+    parent.addEventListener('mouseout', function () {
+        var span = parent.getElementsByTagName('span')[0];
+        span.innerText = ++x;
+        console.log('mouseout')
+    }, false)
+
+    child.addEventListener('mouseover', function (e) {
+        console.log('child mouseover');
+        // e.stopPropagation();//阻止事件冒泡
+    }, false)
+
+    child.addEventListener('mouseout', function (e) {
+        console.log('child mouseout');
+        // e.stopPropagation();//住址鼠标移出事件冒泡
+    }, false);
+
+    parent1.addEventListener('mouseenter', function () {
+        var span = parent1.getElementsByTagName('span')[0];
+        span.innerText = ++x;
+        console.log('mouseenter')
+    }, false);
+
+    parent1.addEventListener('mouseleave', function () {
+        var span = parent1.getElementsByTagName('span')[0];
+        span.innerText = ++x;
+        console.log('mouseleave')
+    }, false)
+
+    child1.addEventListener('mouseenter', function (e) {
+        console.log('child mouseenter');
+        // e.stopPropagation();//阻止事件冒泡
+    }, false)
+
+    child1.addEventListener('mouseleave', function (e) {
+        console.log('child mouseleave');
+        // e.stopPropagation();//阻止鼠标移出事件冒泡
+    }, false);
+</script>
+</body>
+
+</html>

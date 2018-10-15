@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>this的指向</title>
+</head>
+<body>
+<div id="test">
+    click me
+</div>
+
+<script>
+    document.getElementById('test').addEventListener('click',function (e) {
+        console.log(this)
+
+    },false);
+</script>
+</body>
+</html>

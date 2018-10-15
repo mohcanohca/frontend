@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>层模型</title>
+    <script>
+        /**
+         * z-index：对于所有具有定位属性（absolute、relative、fixed）的元素都有效
+         * absolute：相对于具有定位属性的父元素定位，脱离文档流
+         * fixed：相对于浏览器窗口进行定位，脱离文档流
+         * relative：相对于自身在文档流中正常出现的位置定位，没有脱离文档流
+         * static：按照其在文档流中正常出现的位置定位，没有脱离文档流
+         *
+         * 脱离文档流的元素都是块级元素。
+         *
+         */
+    </script>
+    <style>
+        .container {
+            width: 200px;
+            height: 200px;
+            border: 1px solid;
+        }
+
+        .fixed {
+            width: 100px;
+            height: 50px;
+            background-color: pink;
+            position: fixed;
+            top: 10px;
+            z-index: 2;
+        }
+
+        .static {
+            width: 100px;
+            /*height: 100px;*/
+            background-color: red;
+        }
+
+        .relative1 {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background-color: #aaaaaa;
+            left: 20px;
+            top: -30px;
+            z-index: 10;
+        }
+
+        .relative2 {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background-color: #aaaaaa;
+            z-index: 10;
+            margin-top: 0px;
+            top: 10px; /*相对于其正常位置进行定位*/
+        }
+
+        .absolute1 {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: #F6E236;
+
+            top: 0px;
+            left: -10px;
+            margin-top: 40px;
+            z-index: 0;
+
+        }
+
+        .absolute2 {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: #00A0E9;
+
+            top: -10px;
+            margin-top: 40px;
+            /*z-index: 1;*/
+        }
+
+    </style>
+</head>
+<body>
+<p>kongadg</p>
+<p>kongadg</p>
+<p>kongadg</p>
+<p>kongadg</p>
+<p>kongadg</p>
+<p>kongadg</p>
+<div class="container">
+    <div class="fixed">
+        fixed定位的元素
+    </div>
+    <div class="relative1">
+        relative定位的元素
+    </div>
+    <div class="static">
+
+        <span>static定位的元素</span>
+        <div class="float" style="float: left;border:1px solid #00A0E9">
+            float元素
+        </div>
+    </div>
+    <div class="relative2">
+        relative定位的元素
+    </div>
+    <div class="absolute1">
+        absolute定位的元素
+    </div>
+
+    <div class="absolute2">
+        absolute定位的元素
+    </div>
+</div>
+</body>
+</html>

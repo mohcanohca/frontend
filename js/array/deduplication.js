@@ -40,6 +40,7 @@ function unique_indexOf_filter(arr) {
 //排序后去重：判断当前元素是否与上一个元素相同
 function unique_sort(arr) {
     var res = [];
+    //Array.prototype.concat()合并两个或多个数组。此方法不会更改现有数组，而是返回一个新数组。
     var sortedArray = arr.concat().sort();
     var pre;
     for (var i = 0, len = arr.length; i < len; i++) {
