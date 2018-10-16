@@ -3,22 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>link和@import的区别</title>
-    <style>
+    <style rev="stylesheet" type="text/css">
         @import url("style.css");
     </style>
-    <link rel="stylesheet" href="style.css">
-    <script>
-        count = 0;
-        for (var i = 0; i < 10000; i++) {
-            count++;
-        }
-    </script>
+    <link rel="stylesheet" rev="stylesheet" type="text/css" href="style.css">
+
+    <!--<link rel="stylesheet" rev="stylesheet" href="default.css" type="text/css" media="all" />-->
 </head>
 <body>
 <div id="pink">
-
+    我是粉色的
 </div>
 
+<script>
+    alert('haha')
+    count = 0;
+    for (var i = 0; i < 10000; i++) {
+        count++;
+    }
+</script>
 
+<div>
+    zaizjfdinfao
+</div>
 </body>
 </html>

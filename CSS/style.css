@@ -1,3 +1,6 @@
-#test{
-    color: pink;
+#pink {
+    width: 100px;
+    height: 100px;
+    border: #1D2088;
+    background-color: pink;
 }

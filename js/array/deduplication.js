@@ -64,7 +64,7 @@ function unique_object(arr) {
     var obj = {};
 
     return arr.filter(function (item, index, arr) {
-        return obj.hasOwnProperty(JSON.stringify(item)) ? false : obj[JSON.stringify(item)] = true;
+        return obj.hasOwnProperty(typeof item + JSON.stringify(item)) ? false : obj[typeof item + JSON.stringify(item)] = true;
     })
 }
 

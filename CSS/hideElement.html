@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>隐藏标签的实现方式</title>
+    <style>
+        .hide {
+            width: 100px;
+            height: 100px;
+            background-color: #00A0E9;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <p>display:none</p>
+    <div class="hide" style=" display: none;">
+
+    </div>
+    <p>visibility:hidden</p>
+    <div class="hide" style="visibility: hidden;">
+
+    </div>
+    <p>opacity:0</p>
+    <div class="hide" style="opacity: 0;">
+
+    </div>
+</div>
+
+<script>
+    var container = document.getElementById('container');
+    var hides = container.querySelectorAll('.hide');
+    console.log(hides);
+    container.addEventListener('click', function (e) {
+        var target = e.target;//target指向触发事件的元素
+        console.log(e.currentTarget);//currentTarget指向注册事件的元素
+        if (target.className === 'hide') {
+            alert('clicked');
+        }
+    }, false);
+</script>
+</body>
+</html>
